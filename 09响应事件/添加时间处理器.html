@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 第一种绑定方式 -->
+    <input type="button" value="按钮1" onclick="myFunction()">
+    <!-- 第二种绑定方式 -->
+    <input id="mybutton" type="button" value="按钮2">
+    <!-- 第三种绑定方式,采用内联（匿名函数） -->
+    <input id="mybutton1" type="button" value="按钮3">
+
+</body>
+<script>
+    function myFunction() {
+        alert("You clicked the button");
+    }
+    // 赋予onclick属性方法，不添加函数括号
+    document.getElementById("mybutton").onclick = myFunction;
+    document.getElementById("mybutton1").onclick = function () {
+        alert('You clicked the button');
+    }
+    // 删除事件处理器
+    document.getElementById('mybutton').onclick = null;
+</script>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="someID" value="按钮">
+</body>
+<script>
+    myElement = document.getElementById("someID");
+// myElement.onclick = function (e) {
+//     alert(window.event.type);
+// }
+myElement.onclick = function (e) {
+    if(!e) var e = window.event;
+    // 这样就代表所有的even对象
+}
+</script>
+
+</html>

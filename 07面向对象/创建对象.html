@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="button" value="Btn1" onclick="myNewobject.showInfo()">
+    <input type="button" value="Btn2" onclick="myFunc()"> -->
+    <input type="button" value="Btn3" onclick="aaaa.setInfo('这是setInfo方法')">
+    <input type="button" value="Btn4" onclick="aaaa.showInfo()">
+</body>
+<script>
+    // myNewobject  = new Object();
+    // myNewobject.info = "I am a shiny new object!"
+    // function myFunc() {
+    //     alert(this.info);
+    // }
+    // myNewobject.showInfo = myFunc;
+
+    // 创建对象
+    function myObjecttype() {
+        this.info = "I am a shiny new object!";
+        this.showInfo = function () {
+            alert(this.info);
+        }
+        // 将this.info重新设置
+        this.setInfo = function (newInfo) {
+            this.info = newInfo;
+        }
+    }
+    // 实例化对象
+    var aaaa = new myObjecttype()
+
+</script>
+
+</html>

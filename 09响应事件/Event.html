@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="myButton">
+    <div id="output"></div>
+</body>
+<script>
+    function showEvent() {
+        var out = "";
+        document.getElementById("myButton").onclick = function (e) {
+            if (!e) var e = window.event;
+            for (i in e) {
+                out += i + "=" + e[i] + "</br>"
+            }
+            document.getElementById("output").innerHTML = out;
+        }
+    }
+    window.onload = showEvent;
+</script>
+
+</html>

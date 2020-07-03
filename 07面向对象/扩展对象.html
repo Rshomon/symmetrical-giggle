@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="show info on adam" onclick="person1.showInfo()">
+    <input type="button" value="show info on eve" onclick="person2.showInfo()">
+    <input type="button" value="say hello adam" onclick="person1.sayHello()">
+    <input type="button" value="say hello eve" onclick="person2.sayHello()">
+</body>
+<script>
+    function Person(name) {
+        this.name = name;
+        this.info = "This person is called " + this.name;
+        this.showInfo = function () {
+            alert(this.info)
+        }
+    }
+    var person1 = new Person("Adam");
+    var person2 = new Person("Eve");
+    // 对已有方法的拓展
+    Person.prototype.sayHello = function () {
+        alert(this.name + "say hello!")
+    }
+</script>
+
+</html>

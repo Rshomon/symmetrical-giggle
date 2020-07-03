@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 添加事件处理器
+    function addEventHanlder(element, eventType, handlerFunction) {
+        if (element.addEventListener) {
+            element.addEventListener(eventType, handlerFunction, false);
+        } else if (element.attachEvent) {
+            element.attachEvent('on' + eventType, handlerFunction)
+        }
+    }
+    var eventType = 'click';
+    var myButton = document.getElementById('button');
+    // 调用
+    addEventHanlder(myButton, eventType, myFunction)
+
+    // 去除事件处理器
+    function removeEventHandler(element, eventType, handlerFunction) {
+        if (element.removeEventListener) {
+            element.removeEventListener(eventType, handlerFunction, false);
+        } else if (element.detachEvent) {
+            element.detachEvent('on' + eventType, handlerFunction);
+        }
+    }
+    var eventType1 = 'click';
+    var myButton1 = document.getElementById('button1');
+    // 调用
+    removeEventHandler(myButton1, eventType1, myFunction);
+</script>
+
+</html>

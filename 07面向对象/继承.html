@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 定义一个动物对象
+    function Pet() {
+        this.animal = "";
+        this.setAnimal = function (newAnimal) {
+            this.animal = newAnimal;
+        }
+        this.setName = function (newName) {
+            this.name = newName;
+        }
+    }
+    var myCat = new Pet();
+    myCat.setAnimal = "Cat";
+    myCat.setName = "cittly";
+    // 定义狗对象
+    function Dog() {
+        this.breed = "";
+        this.setBreed = function (newBreed) {
+            this.breed = newBreed;
+        }
+    }
+    // 狗对像基层Pet，可以使用pet中所有的属性和方法
+    Dog.prototype = new Pet();
+    var myDog = new Dog();
+    myDog.setName("Alan");
+    myDog.setBreed("Greyhound");
+    alert(myDog.name + " is a " + myDog.breed);
+</script>
+
+</html>
